@@ -8,11 +8,11 @@ class SimpleDiff
     source_matches = Hash.new { |h, k| h[k] = [] }
     source.each_with_index { |el, i| source_matches[el] << i }
 
-    subsequences = Hash.new { |k, v| k[v] = 0 }
+    subsequences = Hash.new { |h, k| h[k] = 0 }
 
     target.each_with_index do |el, ti|
       # Generate a new hash to use for the current iteration
-      _subsequences = Hash.new { |k, v| k[v] = 0 }
+      _subsequences = Hash.new { |h, k| h[k] = 0 }
 
       # This will return an array of indices that represent the positions
       # of tokens
