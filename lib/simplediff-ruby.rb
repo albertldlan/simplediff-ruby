@@ -12,11 +12,11 @@ class SimpleDiff
 
     # The subsequences hash keeps track of the lengths of common sublists
     # between the source and target.
-    subsequences = Hash.new { |k, v| k[v] = 0 }
+    subsequences = Hash.new { |h, k| h[k] = 0 }
 
     target.each_with_index do |el, ti|
       # Generate a new hash to use for the current iteration
-      _subsequences = Hash.new { |k, v| k[v] = 0 }
+      _subsequences = Hash.new { |h, k| h[k] = 0 }
 
       # This will return an array of indices that represent the positions
       # of tokens in the source list that match the current token in the target
